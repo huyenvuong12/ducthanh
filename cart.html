@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+    <link rel="stylesheet" href="./css/sp.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Add these CSS rules to your existing stylesheet or a separate one */
+/* Form styling */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Book selection styling */
+.book-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.book-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-quantity input {
+    width: 60px;
+    padding: 5px;
+}
+
+/* Total and submit button styling */
+h2 {
+    margin-top: 20px;
+}
+
+#total {
+    font-weight: bold;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+</head>
+
+<body>
+
+    <section id="wrapper">
+
+
+        <!--******************************** Thanh menu **********************************-->
+
+        <section class="menu">
+
+            <header>
+
+                <!-- Toggle -->
+                <section id="toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </section>
+
+
+                <!-- Nav trên -->
+                <nav class="nav1">
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fas fa-map-marker-alt"></i> Vietnam</a>
+                            <a href="#">Vietnamese <i class="fas fa-angle-down"></i></a>
+                            <a href="#"><i class="fas fa-phone-volume"></i> 1900 9090</a>
+                        </li>
+
+                        <li>
+                            <a href="#" id="panda">PANDA</a>
+                        </li>
+
+                        <li class="cart-search">
+                            <a href="#"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
+                            <a href="#"><i class="fas fa-search"></i> Tìm kiếm</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Nav dưới -->
+                <nav class="nav2">
+                    <ul id="main-menu">
+                        <li><a href="./index.html">Trang chủ</a></li>
+                        <li><a href="./gioithieu.html">Giới thiệu</a></li>
+                        <li><a href="./sp.html">Sản phẩm <i class="fa-solid fa-caret-down"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="./sp.html">Tản văn</a></li>
+                                <li><a href="./sp.html">Kỹ năng sống</a></li>
+                                <li><a href="./sp.html">Tâm lý học - Trinh thám</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./lienhe.html">Liên hệ</a></li>
+                        <li><a href="./Dangnhap.html"><i class="fa-solid fa-user-graduate"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="./Dangnhap.html">Đăng nhập</a></li>
+                                <li><a href="./Dangky.html">Đăng ký</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+
+            <!-- ------------------------- Banner ---------------------------------- -->
+
+            <section class="header_img"><img src="./img/slider_1.webp" alt=""></section>
+
+        </section>
+
+
+
+
+
+        <!-- ******************************* Main ************************************ -->
+
+        <main>
+
+            <div class="container">
+                <h1>Form thông tin đặt hàng </h1>
+                <form id="order-form">
+                    <h2>Thông tin khách hàng</h2>
+                    <label for="name">Tên khách hàng:</label>
+                    <input type="text" id="name" name="name" required>
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="address">Địa chỉ :</label>
+                    <textarea id="address" name="address" required></textarea>
+        
+                    <h2>Thông tin sách đặt hàng </h2>
+                    <div id="book-list">
+                        <!-- Available books will be dynamically generated here -->
+                    </div>
+        
+                    <h2>Tổng tiền: $<span id="total">0.00</span></h2>
+        
+                    <button type="submit">Đặt hàng </button>
+                </form>
+            </div>
+        
+            <script src="script.js"></script>
+        
+
+
+          
+
+
+
+
+
+
+
+         
+        
+
+        </main>
+
+
+
+
+
+
+
+        <!-- ********************************** Footer ******************************** -->
+
+        <footer>
+            <section class="common">
+
+                <section class="footer1">
+
+                    <section class="text">
+                        <p style="font-size: 30px; font-weight: 700; margin-top: 13px;">ĐĂNG KÝ NHẬN KHUYẾN MÃI</p>
+                        <p style="margin-bottom: 15px; margin-top: 10px; font-size: 14px;">Đừng bỏ lỡ lỡ những sản phẩm và chương trình khuyến mãi hấp dẫn</p>
+                    </section>
+
+                    <section class="form">
+                        <input type="email" placeholder="       Email của bạn">
+                        <section class="signout"><a href="#">Đăng ký</a></section>
+                    </section>
+                </section>
+
+                <section class="ft">
+                    <!-- Left -->
+                    <section class="left">
+                        <section class="img"><img src="./img/White_and_Black_Panda_Cute_T_Shirt-removebg-preview.png"
+                                alt="" width="100%"></section>
+
+                        <section class="information">
+                            <p><span><a href="./lienhe.html"><i class="fa-solid fa-location-dot"></i></a> Địa chỉ cửa hàng</span></p>
+                            <p>Số 163, phường Xuân Khánh, quận Ninh Kiều, TP.Cần Thơ</p>
+                            <p><span>Hotline:</span> 1900 4650 | <span>Email:</span> pandashop@lich.vn</p>
+                            <p><span>Web:</span> kinhdoanh.ml</p>
+                        </section>
+
+                        <section class="follow">
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-youtube"></i>
+                        </section>
+
+                        <section class="brand">
+                            <section><img src="./img/googleplay.png" alt="" width="150px"></section>
+                            <section><img
+                                    src="./img/png-clipart-google-play-apple-app-store-android-lecture-schedule-text-label-removebg-preview.png"
+                                    alt="" width="150px"></section>
+                        </section>
+                    </section>
+
+
+
+                    <!-- Right -->
+                    <section class="right">
+
+                        <section class="right1">
+                            <h2>Về chúng tôi</h2>
+                            <p>Trang chủ</p>
+                            <p>Giới thiệu</p>
+                            <p>Sản phẩm</p>
+                            <p>Tin tức</p>
+                            <p>Liên hệ</p>
+                        </section>
+
+
+                        <section class="right2">
+                            <h2>Chính sách</h2>
+                            <p>Bảo hành</p>
+                            <p>Sửa chữa</p>
+                            <p>Thu cũ đổi mới</p>
+                            <p>Bookcare</p>
+                            <p>Chăm sóc khách hàng</p>
+                        </section>
+
+                    </section>
+
+                </section>
+
+            </section>
+
+            <section class="license">
+                <p>@ Bản quyền thuộc về Lù Cao Cường | Cung cấp bởi Lù Cao Cường</p>
+            </section>
+
+        </footer>
+        <script src="./js/sp.js"></script>
+</body>
+<script>// Sample book data (you can replace this with real data)
+    const books = [
+        { title: "Bố Già (Mario Puzo)", price: 19.99 },
+        { title: "Tôi thấy hoa vàng trên cỏ xanh", price: 24.99 },
+        { title: "Ngồi khóc trên cây", price: 15.99 },
+        // Add more books as needed
+    ];
+    
+    // Function to display available books
+    function displayBooks() {
+        const bookList = document.getElementById("book-list");
+    
+        books.forEach((book, index) => {
+            const bookItem = document.createElement("div");
+            bookItem.classList.add("book-item");
+    
+            const bookInfo = document.createElement("div");
+            bookInfo.classList.add("book-info");
+            bookInfo.innerHTML = `<h3>${book.title}</h3><p>Price: $${book.price.toFixed(2)}</p>`;
+    
+            const bookQuantity = document.createElement("div");
+            bookQuantity.classList.add("book-quantity");
+            bookQuantity.innerHTML = `<label for="book-${index}">Số lượng :</label><input type="number" id="book-${index}" name="book-${index}" value="0">`;
+    
+            bookItem.appendChild(bookInfo);
+            bookItem.appendChild(bookQuantity);
+            bookList.appendChild(bookItem);
+        });
+    }
+    
+    // Function to calculate and update the total price
+    function updateTotal() {
+        const bookQuantities = document.querySelectorAll(".book-quantity input");
+        let total = 0;
+    
+        bookQuantities.forEach((input, index) => {
+            const quantity = parseInt(input.value, 10);
+            const bookPrice = books[index].price;
+            total += quantity * bookPrice;
+        });
+    
+        document.getElementById("total").textContent = total.toFixed(2);
+    }
+    
+    // Call the functions to display books and update the total when the page loads
+    displayBooks();
+    updateTotal();
+    
+    // Add event listeners to update the total when the quantity of books changes
+    const bookInputs = document.querySelectorAll(".book-quantity input");
+    bookInputs.forEach((input) => {
+        input.addEventListener("input", updateTotal);
+    });
+    
+    // Handle the form submission (you can replace this with your own logic)
+    const orderForm = document.getElementById("order-form");
+    orderForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Order placed! (This is a demo)");
+    });
+    </script>
+</html>
